@@ -34,4 +34,5 @@ hooks:
 
 web:
   commands:
+  
     start: "java -jar target/weather-app-task-0.0.1-SNAPSHOT.jar --server.port=$PORT"
