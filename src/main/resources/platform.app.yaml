@@ -11,3 +11,6 @@ disk: 512
 web:
   commands:
     start: java -jar $JAVA_OPTS target/app.jar --server.port=$PORT
+
+hooks:
+  build: mvn clean package
