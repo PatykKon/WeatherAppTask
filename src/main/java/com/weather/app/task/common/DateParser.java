@@ -1,4 +1,4 @@
-package com.weather.app.task.weather;
+package com.weather.app.task.common;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
