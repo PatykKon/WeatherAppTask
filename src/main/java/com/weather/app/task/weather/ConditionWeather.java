@@ -3,11 +3,12 @@ package com.weather.app.task.weather;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import wiremock.org.checkerframework.checker.units.qual.C;
 
 import java.util.Comparator;
 import java.util.List;
 
-@Builder
+
 @Getter
 @EqualsAndHashCode
 class ConditionWeather {
@@ -17,9 +18,10 @@ class ConditionWeather {
     private double averageWindSpeed;
     private double pointRange;
 
-    ConditionWeather(){}
+    public ConditionWeather(){
+    }
 
-    ConditionWeather(String city, double averageTemperature, double averageWindSpeed, double pointRange) {
+    public ConditionWeather(String city, double averageTemperature, double averageWindSpeed, double pointRange) {
         this.city = city;
         this.averageTemperature = averageTemperature;
         this.averageWindSpeed = averageWindSpeed;
@@ -35,12 +37,7 @@ class ConditionWeather {
     }
 
     private static ConditionWeather createConditionWeather(double pointRange, double averageTemp, double averageWindSpeed, String city) {
-        return ConditionWeather.builder()
-                .pointRange(pointRange)
-                .averageTemperature(averageTemp)
-                .city(city)
-                .averageWindSpeed(averageWindSpeed)
-                .build();
+        return new ConditionWeather(city, averageTemp, averageWindSpeed, pointRange);
     }
 
     private static ConditionWeather getWeatherInRange(City city, WeatherSpecification weatherSpecification) {
@@ -59,7 +56,6 @@ class ConditionWeather {
                     city.getName());
 
         }
-        return ConditionWeather.builder()
-                .build();
+        return new ConditionWeather();
     }
 }

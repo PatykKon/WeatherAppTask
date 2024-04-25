@@ -1,5 +1,6 @@
 package com.weather.app.task.infrastructure.client_api;
 
+import com.weather.app.task.dictionary.CityDictionary;
 import com.weather.app.task.infrastructure.client_api.dto.WeatherDataDto;
 import lombok.EqualsAndHashCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 @Component
 @EqualsAndHashCode
-public class WeatherClient {
+class WeatherClient {
 
     private final WebClient webClient;
 
