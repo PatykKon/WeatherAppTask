@@ -1,4 +1,4 @@
-package com.weather.app.task.infrastructure.client_api;
+package com.weather.app.task.dictionary;
 
 public enum CityDictionary {
     Jastarnia("Jastarnia", "PL"),
